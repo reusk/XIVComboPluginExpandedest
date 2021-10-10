@@ -72,7 +72,7 @@ namespace XIVComboExpandedestPlugin.Combos
                     {
                         if (gauge.InUmbralIce() && level >= BLM.Levels.Blizzard4)
                         {
-                            if (gauge.ElementTimeRemaining >= 5000 && Configuration.IsEnabled(CustomComboPreset.BlackThunderFeature))
+                            if (gauge.ElementTimeRemaining >= 5000)
                                 if (HasBuff(BLM.Buffs.Thundercloud))
                                     if ((BuffDuration(BLM.Buffs.Thundercloud) < 4 && BuffDuration(BLM.Buffs.Thundercloud) > 0) 
                                         || (TargetHasBuff(BLM.Debuffs.Thunder3) && TargetBuffDuration(BLM.Debuffs.Thunder3) < 4))
@@ -81,23 +81,23 @@ namespace XIVComboExpandedestPlugin.Combos
                         }
                         if (level >= BLM.Levels.Fire4)
                         {
-                            if (gauge.ElementTimeRemaining >= 6000 && Configuration.IsEnabled(CustomComboPreset.BlackThunderFeature))
+                            if (gauge.ElementTimeRemaining >= 6000)
                                 if (HasBuff(BLM.Buffs.Thundercloud))
                                     if ((BuffDuration(BLM.Buffs.Thundercloud) < 4 && BuffDuration(BLM.Buffs.Thundercloud) > 0) 
                                         || (TargetHasBuff(BLM.Debuffs.Thunder3) && TargetBuffDuration(BLM.Debuffs.Thunder3) < 4))
                                         return BLM.Thunder3;
-                            if (gauge.ElementTimeRemaining < 3000 && HasBuff(BLM.Buffs.Firestarter) && Configuration.IsEnabled(CustomComboPreset.BlackFireFeature))
+                            if (gauge.ElementTimeRemaining < 3000 && HasBuff(BLM.Buffs.Firestarter))
                                 return BLM.Fire3;
-                            if (mp < 2400 && level >= BLM.Levels.Despair && Configuration.IsEnabled(CustomComboPreset.BlackDespairFeature))
+                            if (mp < 2400 && level >= BLM.Levels.Despair)
                             {
                                 return BLM.Despair;
                             }
-                            if (gauge.ElementTimeRemaining < 6000 && !HasBuff(BLM.Buffs.Firestarter) && Configuration.IsEnabled(CustomComboPreset.BlackFireFeature))
+                            if (gauge.ElementTimeRemaining < 6000 && !HasBuff(BLM.Buffs.Firestarter))
                                 return BLM.Fire;
                             return BLM.Fire4;
                         }
                     }
-                    if (gauge.ElementTimeRemaining >= 5000 && Configuration.IsEnabled(CustomComboPreset.BlackThunderFeature) && level < BLM.Levels.Thunder3)
+                    if (gauge.ElementTimeRemaining >= 5000 && level < BLM.Levels.Thunder3)
                         if (HasBuff(BLM.Buffs.Thundercloud))
                             if ((BuffDuration(BLM.Buffs.Thundercloud) < 4 && BuffDuration(BLM.Buffs.Thundercloud) > 0) 
                                 || (TargetHasBuff(BLM.Debuffs.Thunder) && TargetBuffDuration(BLM.Debuffs.Thunder) < 4))
